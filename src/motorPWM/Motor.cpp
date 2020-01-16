@@ -1,18 +1,14 @@
-#include <Wire.h>
+//#include <Wire.h>
 #include "Motor.h"
 #include "Arduino_I2C_ESC/Arduino_I2C_ESC.h"
 
-Motor::Motor(int8_t ESCAddress, String name = "motor", double throttle = 1) {
-
-}
-
-Motor::Motor(int8_t ESCAddress, String name = "motor", double throttle = 1) {
-    this.name = name;
-    this.ESCAddress = ESCAddress;
-    this.I2CMotor = Arduino_I2C_ESC(ESCAddress);
+Motor::Motor(uint8_t ESCAddress, String name = "motor", double throttle = 1) {
+    this->name = name;
+    this->ESCAddress = ESCAddress;
+    this->I2CMotor = new Arduino_I2C_ESC(ESCAddress);
     //set the throttle for the I2CMotor
-    this.throttle = throttle;
-    this.setThrottle(throttle);
+    this->throttle = throttle;
+    this->setThrottle(throttle);
 }
     
 void Motor::setThrottle(double throttle) {

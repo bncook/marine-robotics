@@ -11,8 +11,8 @@ class Motor {
   private:
     String name;        //if you want to give the motor a cool name
     double throttle;    //between -1 and 1
-    int8_t ESCAddress;
-    Arduino_I2C_ESC I2CMotor;
+    uint8_t ESCAddress;
+    Arduino_I2C_ESC * I2CMotor;
   
   public:
     /* Creates a new Motor object with the specified name and ESC Address
@@ -24,7 +24,7 @@ class Motor {
      *         of the throttle is equal to the magnitude of 'throttle'
      *         optional parameter
      */
-    Motor(int8_t ESCAddress, String name = "motor", double throttle = 1);
+    Motor(uint8_t ESCAddress, String name = "motor", double throttle = 1);
     
     /* Sets the throttle of the Motor to the given pwm signal
      * param: 'throttle', the pwm signal to set the motor throttle to;
@@ -63,4 +63,4 @@ class Motor {
     /* Returns RPM of the motor. Note that this measurement will be
      * more accurate if the I2C data is read slowly. */
     int16_t rpm();
-}
+};
