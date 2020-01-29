@@ -24,7 +24,7 @@ class Motor {
      *         of the throttle is equal to the magnitude of 'throttle'
      *         optional parameter
      */
-    Motor(uint8_t ESCAddress, String name = "motor", double throttle = 1);
+    Motor(uint8_t ESCAddress, String name = "motor", double throttle = 1.0);
     
     /* Sets the throttle of the Motor to the given pwm signal
      * param: 'throttle', the pwm signal to set the motor throttle to;
