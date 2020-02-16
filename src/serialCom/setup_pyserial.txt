@@ -1,0 +1,10 @@
+Instructions for setting up pyserial
+
+- Download pyserial from pypi.org/project/pyserial/2.7/#files
+- Copy pyserial tar file into user directory: cp Downloads/pyserial-2.7.tar.gz .
+- Open? tar file: tar -zxvf pyserial-2.7.tar.gz
+- Run:
+	cd pyserial-2.7/
+	python setup.py build
+	sudo python setup.py install
+
